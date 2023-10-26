@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as React from 'react';
+import * as React from "react";
 import {
   Button,
   Pressable,
@@ -17,11 +17,8 @@ export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
   return (
     <View style={styles.container}>
-      const [displayMyQR, setDisplayMyQR] = useState(true);
-      <View style={styles.container}>
-        <Header setDisplayMyQR={setDisplayMyQR} />
-        {displayMyQR ? <PersonalInfo /> : <QRCodeSection />}
-      </View>
+      <Header setDisplayMyQR={setDisplayMyQR} />
+      {displayMyQR ? <PersonalInfo /> : <QRCodeSection />}
     </View>
   );
 }

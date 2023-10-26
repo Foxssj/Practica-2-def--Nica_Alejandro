@@ -18,7 +18,6 @@ const ThingsILike = () => (
     </Text>
     <ScrollView style={{ padding: 10 }}>
       {[
-        "Ir al gimnasio",
         "Montar en bici",
         "Nadar en el mar y piscina",
         "Ir a comer con la familia",
@@ -26,7 +25,7 @@ const ThingsILike = () => (
         "Descanasar durante las vacaciones",
         "Ir al cine con los amigos",
         "Escuchar musica de todo tipo",
-        "Ducharme",
+        "Oler bien",
       ].map((item) => (
         <Text key={item} style={styles.cosasQmeGustanMuxoEstails}>
           {item}

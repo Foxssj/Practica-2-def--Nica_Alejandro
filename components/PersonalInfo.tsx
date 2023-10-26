@@ -32,13 +32,8 @@ const PersonalInfo = () => (
         <Text>
           Soy Alejandro estoy cursando 2º de Dam (Desarrollo de Aplicaciones
           Multiplataforma). {"\n"}
-          En clase somos como unos 25 personas y las asignaturas que nos
-          imparten son las siguiente: {"\n"}- Acceso a datos (AED) : Alexis
-          Abreu {"\n"}- Desarrollo de interfases (DAD) : Santiago Díaz {"\n"}-
-          Programación de servicios y procesos (PGV) : Adrian Chinea {"\n"}-
-          Programación multimedia y dispositivos móviles (PGL) : Adrian Chinea{" "}
-          {"\n"}- Sistema gestión empresarial (SSG) : Manuel Garrido {"\n"}-
-          Empresa e iniciativa emprendedora (EMR) : Manuel Garrido {"\n"}
+          Tengo 21 años de edad naci el 17/03/200.{"\n"}
+          Me gusta aprender cosas nuevas.{"\n"}
         </Text>
       </View>
     </View>
