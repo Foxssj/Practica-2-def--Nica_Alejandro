@@ -7,7 +7,7 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => (
   <View style={styles.topContainer}>
-    <Text style={styles.firsttoprowContainer}>My Portfolio App</Text>
+    <Text style={styles.firsttoprowContainer}>Porfolio de Alejandro</Text>
     <View style={styles.rowTopSecondContainer}>
       <Button onPress={() => props.setDisplayMyQR(true)} title="Alejandro" />
       <Button
