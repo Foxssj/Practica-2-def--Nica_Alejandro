@@ -1,13 +1,18 @@
-import { useState } from "react";
 import * as React from "react";
 
 import { ScrollView, StyleSheet, Text } from "react-native";
+import colors from "../assets/colors/colors";
+import darkColors from "../assets/colors/darkColors";
 
-const ThingsILike = () => (
+type HobbiesProps = {
+  darkMode: boolean;
+};
+
+const HobbiesAlejandro = (props: HobbiesProps) => (
   <>
     <Text
       style={{
-        color: "black",
+        color: props.darkMode ? colors.White : darkColors.dark,
         fontWeight: "900",
         textTransform: "capitalize",
         fontSize: 20,
@@ -16,7 +21,7 @@ const ThingsILike = () => (
     >
       cosas que me gustan mucho:
     </Text>
-    <ScrollView style={{ padding: 10 }}>
+    <ScrollView style={{ padding: 2 }}>
       {[
         "Montar en bici",
         "Nadar en el mar y piscina",
@@ -27,7 +32,10 @@ const ThingsILike = () => (
         "Escuchar musica de todo tipo",
         "Oler bien",
       ].map((item) => (
-        <Text key={item} style={styles.cosasQmeGustanMuxoEstails}>
+        <Text
+          key={item}
+          style={props.darkMode ? styles.arrThingsDark : styles.arrThings}
+        >
           {item}
         </Text>
       ))}
@@ -36,7 +44,7 @@ const ThingsILike = () => (
 );
 
 const styles = StyleSheet.create({
-  cosasQmeGustanMuxoEstails: {
+  arrThings: {
     borderColor: "black",
     borderWidth: 1,
     borderStyle: "dashed",
@@ -46,8 +54,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontStyle: "italic",
     fontSize: 16,
-    backgroundColor: "#6667ab",
+    backgroundColor: colors.bluishPurple,
+  },
+  arrThingsDark: {
+    borderColor: "black",
+    borderWidth: 1,
+    borderStyle: "dashed",
+    padding: 20,
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontStyle: "italic",
+    fontSize: 16,
+    backgroundColor: darkColors.darkViolet,
   },
 });
 
-export default ThingsILike;
+export default HobbiesAlejandro;

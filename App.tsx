@@ -1,24 +1,43 @@
 import { useState } from "react";
 import * as React from "react";
-import {
-  Button,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Header } from "./components/Header";
 import PersonalInfo from "./components/PersonalInfo";
 import QRCodeSection from "./components/QRCodeSection";
+import colors from "./assets/colors/colors";
+import darkColors from "./assets/colors/darkColors";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
+  const [displayUser, setDisplayUser] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const displayCurrentUser = () =>
+    displayUser ? (
+      <>
+        {displayMyQR ? (
+          <PersonalInfo displayUser={displayUser} darkMode={darkMode} />
+        ) : (
+          <QRCodeSection link="https://github.com/aleymaarr" user="Alejandro" />
+        )}
+      </>
+    ) : (
+      <>
+        {displayMyQR ? (
+          <PersonalInfo displayUser={displayUser} darkMode={darkMode} />
+        ) : (
+          <QRCodeSection link="https://github.com/Foxssj" user="Nicanor" />
+        )}
+      </>
+    );
   return (
-    <View style={styles.container}>
-      <Header setDisplayMyQR={setDisplayMyQR} />
-      {displayMyQR ? <PersonalInfo /> : <QRCodeSection />}
+    <View style={darkMode ? styles.darkContainer : styles.container}>
+      <Header
+        setDisplayMyQR={setDisplayMyQR}
+        setDisplayUser={setDisplayUser}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
+      {displayCurrentUser()}
     </View>
   );
 }
@@ -26,7 +45,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.White,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  darkContainer: {
+    flex: 1,
+    backgroundColor: darkColors.dark,
     alignItems: "center",
     justifyContent: "center",
   },
